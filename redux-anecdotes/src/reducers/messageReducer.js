@@ -23,10 +23,13 @@ export const setMessage = (message) => {
     }
 }
 
+let timeoutID
+
 export const setNotification = (message, time) => {
     return async dispatch => {
         dispatch(setMessage(message))
-        setTimeout( () => {
+        clearTimeout(timeoutID)
+        timeoutID = setTimeout( () => {
             dispatch(removeMessage())
         }, time * 1000)
     }
