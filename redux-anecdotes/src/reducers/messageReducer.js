@@ -23,4 +23,13 @@ export const setMessage = (message) => {
     }
 }
 
+export const setNotification = (message, time) => {
+    return async dispatch => {
+        dispatch(setMessage(message))
+        setTimeout( () => {
+            dispatch(removeMessage())
+        }, time * 1000)
+    }
+}
+
 export default messageReducer
