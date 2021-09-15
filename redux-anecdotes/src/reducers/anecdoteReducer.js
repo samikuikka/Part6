@@ -31,7 +31,6 @@ export const createAnecdote = (data) => {
   return {
     type: 'NEW_ANECDOTE',
     data,
-      votes: 0
     }
 }
 
